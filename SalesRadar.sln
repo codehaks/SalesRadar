@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesRadar", "src\SalesRada
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesRadar.Web", "src\SalesRadar.Web\SalesRadar.Web.csproj", "{7D86C434-982E-4818-827E-760EAA33A442}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesRadar.WebApi", "src\SalesRadar.WebApi\SalesRadar.WebApi.csproj", "{82158C0A-3DDE-4698-AF3D-6BC3851ED980}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D86C434-982E-4818-827E-760EAA33A442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D86C434-982E-4818-827E-760EAA33A442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D86C434-982E-4818-827E-760EAA33A442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82158C0A-3DDE-4698-AF3D-6BC3851ED980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82158C0A-3DDE-4698-AF3D-6BC3851ED980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82158C0A-3DDE-4698-AF3D-6BC3851ED980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82158C0A-3DDE-4698-AF3D-6BC3851ED980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SalesRadar.Application;
-public class CustomerService
+public class CustomerService : ICustomerService
 {
     private PhoneNumberUtil phoneNumberUtil;
     private readonly ILogger<CustomerService> _logger;
@@ -46,6 +46,10 @@ public class CustomerService
         return _db.Customers.Find(customerId);
     }
 
+    public List<Customer> GetAllCustomers()
+    {
+        return _db.Customers.ToList();
+    }
     // Update an existing customer
     public Customer UpdateCustomer(Customer updatedCustomer)
     {

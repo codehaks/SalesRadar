@@ -1,0 +1,6 @@
+@SalesRadar.WebApi_HostAddress = http://localhost:5246
+
+GET {{SalesRadar.WebApi_HostAddress}}/api/customer/
+Accept: application/json
+
+###
