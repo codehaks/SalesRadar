@@ -49,7 +49,7 @@ public class CustomerController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Customer> CreateCustomer([FromBody] Customer customer)
+    public ActionResult<Customer> CreateCustomer([FromBody] CustomerCreateDto customer)
     {
         try
         {

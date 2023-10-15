@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using PhoneNumbers;
 using SalesRadar.Domain;
@@ -22,26 +23,27 @@ public class CustomerService : ICustomerService
     }
 
     // Create a new customer
-    public Customer CreateCustomer(Customer customer)
+    public Customer CreateCustomer(CustomerCreateDto customerDto)
     {
-        if (customer == null)
+        if (customerDto == null)
         {
-            throw new ArgumentNullException(nameof(customer));
+            throw new ArgumentNullException(nameof(customerDto));
         }
 
         // Check if the customer is unique before creating
-        if (!IsCustomerUnique(customer) || !IsEmailUnique(customer.Email))
+        if (!IsCustomerUnique(customerDto) || !IsEmailUnique(customerDto.Email))
         {
             throw new InvalidOperationException("Customer or email is not unique.");
         }
 
+        var customer = customerDto.Adapt<Customer>();
         _db.Customers.Add(customer);
         _db.SaveChanges();
         return customer;
     }
 
     // Read a customer by ID
-    public Customer GetCustomerById(int customerId)
+    public Customer? GetCustomerById(int customerId)
     {
         return _db.Customers.Find(customerId);
     }
@@ -59,7 +61,7 @@ public class CustomerService : ICustomerService
         }
 
         // Check if the customer is unique before updating
-        if (!IsCustomerUnique(updatedCustomer) || !IsEmailUnique(updatedCustomer.Email))
+        if (!IsCustomerUnique(updatedCustomer.Adapt<CustomerCreateDto>()) || !IsEmailUnique(updatedCustomer.Email))
         {
             throw new InvalidOperationException("Customer or email is not unique.");
         }
@@ -95,13 +97,13 @@ public class CustomerService : ICustomerService
         }
     }
 
-    public bool IsCustomerUnique(Customer customer)
+    public bool IsCustomerUnique(CustomerCreateDto customer)
     {
         // Check for uniqueness based on FirstName, LastName, and DateOfBirth in your data store.
         bool isUnique = !_db.Customers.Any(c =>
             c.FirstName == customer.FirstName &&
             c.LastName == customer.LastName &&
-            c.DateOfBirth == customer.DateOfBirth);
+            c.DateOfBirth.Value == customer.DateOfBirth);
 
         return isUnique;
     }
