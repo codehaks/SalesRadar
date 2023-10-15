@@ -1,8 +1,8 @@
-﻿using BugNet.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using PhoneNumbers;
 using SalesRadar.Domain;
+using SalesRadar.Infrastruture;
 using System;
 using System.Collections.Generic;
 using System.Linq;

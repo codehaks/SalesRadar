@@ -1,10 +1,9 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SalesRadar.Domain;
 
-namespace BugNet.Data;
+namespace SalesRadar.Infrastruture;
 
-public class SalesRadarDbContext:DbContext
+public class SalesRadarDbContext : DbContext
 {
     public SalesRadarDbContext(DbContextOptions<SalesRadarDbContext> options)
            : base(options)

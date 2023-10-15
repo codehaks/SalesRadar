@@ -1,7 +1,17 @@
+using SalesRadar.Infrastruture;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<SalesRadarDbContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["Database"]);
+    options.LogTo(Console.WriteLine, LogLevel.Information);
+});
+
 
 var app = builder.Build();
 
