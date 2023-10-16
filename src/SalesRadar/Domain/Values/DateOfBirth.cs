@@ -10,11 +10,11 @@ namespace SalesRadar.Domain.Values;
 [ComplexType]
 public class DateOfBirth
 {
-    public DateOnly Value { get; }
+    public DateTime Value { get; }
 
-    public DateOfBirth(DateOnly dateOfBirth)
+    public DateOfBirth(DateTime dateOfBirth)
     {
-        if (dateOfBirth > DateOnly.FromDateTime(DateTime.Now))
+        if (dateOfBirth.Date > DateTime.UtcNow.Date)
         {
             throw new ArgumentOutOfRangeException(nameof(dateOfBirth));
         }

@@ -1,5 +1,6 @@
 ﻿using SalesRadar.Domain;
 using SalesRadar.Domain.Values;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalesRadar.Application;
 public interface ICustomerService
@@ -19,7 +20,8 @@ public record CustomerCreateDto
     public required string FirstName { get; set; }
     public required string LastName { get; set; }
 
-    public required DateOnly DateOfBirth { get; set; }
+    [DataType(DataType.Date)]
+    public required DateTime DateOfBirth { get; set; }
     public required string PhoneNumber { get; set; }
     public required string Email { get; set; }
     public required string BankAccountNumber { get; set; }

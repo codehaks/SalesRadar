@@ -13,9 +13,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SalesRadarDbContext>(options =>
 {
-    options.UseSqlite(builder.Configuration["Database"]);
+    options.UseNpgsql(builder.Configuration.GetConnectionString("sales"));
+
     options.LogTo(Console.WriteLine, LogLevel.Information);
 });
+
+
 
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 

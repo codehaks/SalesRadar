@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using PhoneNumbers;
 using SalesRadar.Domain;
 using SalesRadar.Infrastruture;
+using SalesRadar.Infrastruture.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,21 @@ public class CustomerService : ICustomerService
         {
             throw new InvalidOperationException("Customer or email is not unique.");
         }
+        TypeAdapterConfig<CustomerCreateDto, Customer>.NewConfig()
+    .Ignore(destination => destination.DateOfBirth);
 
-        var customer = customerDto.Adapt<Customer>();
-        _db.Customers.Add(customer);
+        var customer = new Customer
+        {
+            BankAccountNumber = customerDto.BankAccountNumber,
+            Email = customerDto.Email,
+            FirstName= customerDto.FirstName,
+            LastName= customerDto.LastName,
+            PhoneNumber = customerDto.PhoneNumber,
+            DateOfBirth = new Domain.Values.DateOfBirth(customerDto.DateOfBirth)
+        };
+
+
+        _db.Customers.Add(customer.Adapt<CustomerData>());
         _db.SaveChanges();
         return customer;
     }
@@ -45,12 +58,12 @@ public class CustomerService : ICustomerService
     // Read a customer by ID
     public Customer? GetCustomerById(int customerId)
     {
-        return _db.Customers.Find(customerId);
+        return _db.Customers.Find(customerId)?.Adapt<Customer>();
     }
 
     public List<Customer> GetAllCustomers()
     {
-        return _db.Customers.ToList();
+        return _db.Customers.ProjectToType<Customer>().ToList();
     }
     // Update an existing customer
     public Customer UpdateCustomer(Customer updatedCustomer)
@@ -103,7 +116,7 @@ public class CustomerService : ICustomerService
         bool isUnique = !_db.Customers.Any(c =>
             c.FirstName == customer.FirstName &&
             c.LastName == customer.LastName &&
-            c.DateOfBirth.Value == customer.DateOfBirth);
+            c.DateOfBirth == customer.DateOfBirth);
 
         return isUnique;
     }
