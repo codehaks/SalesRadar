@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SalesRadar.Domain.Values;
-
-[ComplexType]
+﻿namespace SalesRadar.Domain.Values;
 public class DateOfBirth
 {
     public DateTime Value { get; }
