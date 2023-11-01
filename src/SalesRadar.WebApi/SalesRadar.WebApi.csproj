@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,5 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\SalesRadar\SalesRadar.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call $(SolutionDir)update-coverage-report.bat" />
+  </Target>
+
 
 </Project>

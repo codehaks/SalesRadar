@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{08B993FB-7BF1-4883-85EE-739848C7C41F}"
 	ProjectSection(SolutionItems) = preProject
 		run_coverage_report.bat = run_coverage_report.bat
+		update-coverage-report.bat = update-coverage-report.bat
 	EndProjectSection
 EndProject
 Global
