@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesRadar", "src\SalesRada
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesRadar.WebApi", "src\SalesRadar.WebApi\SalesRadar.WebApi.csproj", "{82158C0A-3DDE-4698-AF3D-6BC3851ED980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesRadar.Tests", "test\SalesRadar.Tests\SalesRadar.Tests.csproj", "{DB271844-1443-41DB-89DF-B4D3418DA92B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesRadar.Tests", "test\SalesRadar.Tests\SalesRadar.Tests.csproj", "{DB271844-1443-41DB-89DF-B4D3418DA92B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71ADF5FC-3314-4AB2-A75B-7F262CF4FD71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6B7C08E2-505F-4FF7-8358-D3F6D027BEF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A78ECFB-B22F-459D-AFB5-D81E85190EA2} = {71ADF5FC-3314-4AB2-A75B-7F262CF4FD71}
+		{82158C0A-3DDE-4698-AF3D-6BC3851ED980} = {71ADF5FC-3314-4AB2-A75B-7F262CF4FD71}
+		{DB271844-1443-41DB-89DF-B4D3418DA92B} = {6B7C08E2-505F-4FF7-8358-D3F6D027BEF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3309116E-5D89-4D02-8C0D-F940B8CE525A}
