@@ -14,6 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6B7C08E2-505F-4FF7-8358-D3F6D027BEF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{08B993FB-7BF1-4883-85EE-739848C7C41F}"
+	ProjectSection(SolutionItems) = preProject
+		run_coverage_report.bat = run_coverage_report.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

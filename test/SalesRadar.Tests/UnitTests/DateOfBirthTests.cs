@@ -8,6 +8,19 @@ namespace SalesRadar.Tests.UnitTests;
 public class DateOfBirthTests
 {
     [Fact]
+    public void DateOfBirth_Value_ShouldBeSetCorrectly()
+    {
+        // Arrange
+        DateTime expectedDate = new DateTime(2000, 1, 1);
+
+        // Act
+        DateOfBirth dateOfBirth = new DateOfBirth(expectedDate);
+
+        // Assert
+        Assert.Equal(expectedDate, dateOfBirth.Value);
+    }
+
+    [Fact]
     public void DateOfBirth_WithValidDate_ShouldNotThrowException()
     {
         // Arrange
