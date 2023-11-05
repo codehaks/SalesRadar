@@ -20,4 +20,8 @@
     <ProjectReference Include="..\SalesRadar\SalesRadar.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call $(SolutionDir)update_coverage_report.bat" />
+  </Target>
+
 </Project>

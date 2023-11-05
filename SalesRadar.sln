@@ -13,6 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71ADF5FC-331
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6B7C08E2-505F-4FF7-8358-D3F6D027BEF8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A151DDE2-5254-4AA1-818B-FA94AFA87D57}"
+	ProjectSection(SolutionItems) = preProject
+		run_coverage_report.bat = run_coverage_report.bat
+		update_coverage_report.bat = update_coverage_report.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\SalesRadar.WebApi\SalesRadar.WebApi.csproj" />
     <ProjectReference Include="..\..\src\SalesRadar\SalesRadar.csproj" />
   </ItemGroup>
 
