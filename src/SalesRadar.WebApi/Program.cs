@@ -1,6 +1,10 @@
 using SalesRadar.Infrastruture;
 using Microsoft.EntityFrameworkCore;
-using SalesRadar.Application;
+using SalesRadar.Common;
+using SalesRadar.Application.Contracts;
+using SalesRadar.Application.Services;
+using SalesRadar.Domain.Contracts;
+using SalesRadar.Infrastruture.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,13 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<SalesRadarDbContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("sales"));
+builder.Services.AddScoped<ICustomerRepository,CustomerRepository>();
 
-    options.LogTo(Console.WriteLine, LogLevel.Information);
-});
-
+builder.Services.AddLiteDb("sales.db");
 
 
 builder.Services.AddScoped<ICustomerService, CustomerService>();

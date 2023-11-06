@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SalesRadar.Application;
+using SalesRadar.Application.Contracts;
 using SalesRadar.Domain;
 using System;
 using System.Collections.Generic;

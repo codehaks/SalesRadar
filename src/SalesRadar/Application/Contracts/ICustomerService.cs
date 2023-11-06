@@ -2,16 +2,13 @@
 using SalesRadar.Domain.Values;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalesRadar.Application;
+namespace SalesRadar.Application.Contracts;
 public interface ICustomerService
 {
     Customer CreateCustomer(CustomerCreateDto customer);
     void DeleteCustomer(int customerId);
     List<Customer> GetAllCustomers();
     Customer? GetCustomerById(int customerId);
-    bool IsCustomerUnique(CustomerCreateDto customer);
-    bool IsEmailUnique(string email);
-    bool IsPhoneNumberValid(string phoneNumber, string countryCode);
     Customer UpdateCustomer(Customer updatedCustomer);
 }
 
