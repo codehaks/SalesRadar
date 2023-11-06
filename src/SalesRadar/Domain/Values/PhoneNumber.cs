@@ -21,12 +21,9 @@ public class PhoneNumber
 
     public static bool IsValidPhoneNumber(string phoneNumber)
     {
-        // Implement your phone number validation logic here, e.g., using regular expressions.
-        // This can vary depending on your specific requirements.
-        // For example, you can use regular expressions or libraries like libphonenumber.
-        // For this example, we'll use a simple format check.
-        return !string.IsNullOrEmpty(phoneNumber) && phoneNumber.Length >= 10;
+
+        return !string.IsNullOrEmpty(phoneNumber) && phoneNumber.Length == 11;
     }
 
-    // You can add additional methods or behaviors related to phone numbers if needed.
+   
 }
