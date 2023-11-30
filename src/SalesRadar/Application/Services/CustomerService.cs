@@ -26,7 +26,6 @@ public class CustomerService : ICustomerService
 
         var customer = new Customer
         {
-            BankAccountNumber = customerDto.BankAccountNumber,
             Email = customerDto.Email,
             FirstName = customerDto.FirstName,
             LastName = customerDto.LastName,
