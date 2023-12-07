@@ -40,6 +40,7 @@ public class CustomerController : ControllerBase
     [HttpGet("{customerId}")]
     public ActionResult<Customer> GetCustomer(int customerId)
     {
+        _logger.LogInformation($"Customer info with {customerId} requested");
         var customer = _customerService.GetCustomerById(customerId);
         if (customer == null)
         {
